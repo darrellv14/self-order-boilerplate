@@ -56,6 +56,38 @@ npm run build
 - Customer flow: `http://localhost:3000/table/12`
 - Backend API: `http://localhost:4000/api`
 
+## Deploy Ke Vercel
+
+Gunakan `2 project Vercel` terpisah dari repo yang sama:
+
+1. Frontend project
+   - Root Directory: `frontend`
+   - Framework: `Next.js`
+   - Build Command: default
+   - Install Command: default
+   - Environment Variable:
+     - `NEXT_PUBLIC_API_URL=https://YOUR-BACKEND-PROJECT.vercel.app/api`
+
+2. Backend project
+   - Root Directory: `Backend`
+   - Framework Preset: `Other`
+   - Build Command: `npm run build`
+   - Install Command: `npm install`
+   - Tambahkan env:
+     - `DATABASE_URL`
+     - `DIRECT_URL`
+     - `JWT_SECRET`
+     - `CLOUDINARY_CLOUD_NAME`
+     - `CLOUDINARY_API_KEY`
+     - `CLOUDINARY_API_SECRET`
+     - `CLOUDINARY_URL`
+
+Catatan penting:
+
+- Frontend jangan deploy dari root repo, deploy dari root directory `frontend`
+- Backend jangan deploy dari root repo, deploy dari root directory `Backend`
+- Root repo sekarang sudah tidak menjalankan `postinstall` Prisma lagi, jadi frontend build tidak akan tersandung backend
+
 ## Seeder Login
 
 - Owner

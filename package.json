@@ -12,7 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "start": "concurrently \"npm run start -w Backend\" \"npm run start -w frontend\"",
-    "postinstall": "npm run prisma:generate -w Backend"
+    "backend:prepare": "npm run prisma:generate -w Backend"
   },
   "devDependencies": {
     "@eslint/js": "9.28.0",
