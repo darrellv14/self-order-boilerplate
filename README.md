@@ -91,6 +91,7 @@ Catatan penting:
 - Backend Vercel memakai entry serverless di:
   - `Backend/api/index.ts`
   - `Backend/api/[...route].ts`
+- `Backend/vercel.json` tidak mendefinisikan `runtime` Node secara manual karena Vercel Node Functions sudah terdeteksi otomatis untuk file `api/*.ts`
 - Local development tetap memakai `src/index.ts` dengan `app.listen()`
 
 ## Seeder Login
