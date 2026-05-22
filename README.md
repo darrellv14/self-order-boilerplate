@@ -73,6 +73,7 @@ Gunakan `2 project Vercel` terpisah dari repo yang sama:
    - Framework Preset: `Other`
    - Build Command: `npm run build`
    - Install Command: `npm install`
+   - Output Directory: kosongkan
    - Tambahkan env:
      - `DATABASE_URL`
      - `DIRECT_URL`
@@ -87,6 +88,10 @@ Catatan penting:
 - Frontend jangan deploy dari root repo, deploy dari root directory `frontend`
 - Backend jangan deploy dari root repo, deploy dari root directory `Backend`
 - Root repo sekarang sudah tidak menjalankan `postinstall` Prisma lagi, jadi frontend build tidak akan tersandung backend
+- Backend Vercel memakai entry serverless di:
+  - `Backend/api/index.ts`
+  - `Backend/api/[...route].ts`
+- Local development tetap memakai `src/index.ts` dengan `app.listen()`
 
 ## Seeder Login
 
